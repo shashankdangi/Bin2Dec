@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Binary 2 Decimal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <h2>Binary to Decimal Converter</h2>
+      <div class="form">
+        <label class="label" for="Binary">Binary</label>
+        <input type="text" name="Binary" id="bin" />
+        <button id="convert">Convert</button>
+        <label class="label" for="Result">Decimal</label>
+        <input type="text" id="result" name="result" />
+      </div>
+    </div>
+  </body>
+  <script>
+    document.getElementById("convert").addEventListener("click", function () {
+      const binary = document.getElementById("bin").value;
+      const result = document.getElementById("result");
+      let sum = 0;
+      for (let i = 0; i < binary.length; i++) {
+        const n = binary[binary.length - 1 - i];
+
+        if (n == "1") {
+          sum += 2 ** i;
+        }
+      }
+      result.value = sum;
+    });
+  </script>
+  <footer>made with 💖 by <a id="footer" href="">Shashank</a></footer>
+</html>
